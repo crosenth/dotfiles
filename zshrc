@@ -46,7 +46,6 @@ function cl {
 }
 
 # aliases
-alias mgs='cd /shared/silo_researcher/Matsen_F/MatsenGrp'
 alias pytemp='gist 3006600'
 
 # everyone in group can read and write new files
