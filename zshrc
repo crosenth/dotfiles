@@ -41,6 +41,7 @@ function gist {
   # print contents of the first file in the gist to stdout
   curl -s https://api.github.com/gists/$1 | python -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
 }
+
 function cl {
   csvlook $1 | less -S
 }
@@ -49,6 +50,7 @@ function cl {
 alias pytemp='gist 3006600'
 alias srun='srun -v'
 alias nseqs='grep -c ">"'
+alias scons='scons -j 4'
 
 # everyone in group can read and write new files
 umask 002
