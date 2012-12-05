@@ -1,0 +1,1 @@
+screen.vba: call delete('/home/crosenth/.vim/autoload/screen.vim')|call delete('/home/crosenth/.vim/doc/screen.txt')|call delete('/home/crosenth/.vim/plugin/screen.vim')
