@@ -2,6 +2,10 @@
 call pathogen#infect()
 
 " Basic Setup
+syntax on
+filetype plugin on
+filetype indent on
+
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
 set ruler             " Show line and column number
@@ -22,8 +26,6 @@ set noerrorbells         " don't beep
 " Python completion
 autocmd   FileType  python :set omnifunc=pythoncomplete#Complete
 
-autocmd   FileType  python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=0
-
 " Tab completion
 let g:SuperTabDefaultCompletionType = "context"
 
@@ -43,6 +45,10 @@ set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
+function TrimTrailingSpace()
+  :%s/\s\+$//e
+endfunction
+
 if exists("g:enable_mvim_shift_arrow")
   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
 endif
@@ -55,10 +61,6 @@ set listchars+=extends:>          " The character to show in the last column whe
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
-
-syntax enable
-filetype plugin on
-filetype indent on
 
 " Disable autocommenting 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -73,7 +75,7 @@ set noswapfile
 
 "" Filetypes
 " SConstruct
-au BufNewFile,BufRead SCons* set filetype=scons
+autocmd BufWritePre,BufCreate SCons* :set ft=python
 
 " Make
 au FileType make setlocal noexpandtab " use real tabs, not tabs expanded to spaces
@@ -86,6 +88,9 @@ au BufNewFile,BufRead *.json set ft=javascript " Treat JSON files like JavaScrip
 
 " Make sure all mardown files have the correct filetype set
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+
+" get rid of whitespaces in scons, python and R files
+autocmd BufWritePre *.py,*.R,SCons* :call TrimTrailingSpace()
 
 " Color
 color delek
