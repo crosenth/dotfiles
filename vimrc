@@ -24,7 +24,7 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 
 " Python completion
-autocmd   FileType  python :set omnifunc=pythoncomplete#Complete
+autocmd FileType python :set omnifunc=pythoncomplete#Complete
 
 " Tab completion
 let g:SuperTabDefaultCompletionType = "context"
@@ -75,7 +75,7 @@ set noswapfile
 
 "" Filetypes
 " SConstruct
-autocmd BufWritePre,BufCreate SCons* :set ft=python
+autocmd BufNewFile,BufRead SCons* :set ft=python
 
 " Make
 au FileType make setlocal noexpandtab " use real tabs, not tabs expanded to spaces
