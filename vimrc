@@ -6,6 +6,9 @@ syntax on
 filetype plugin on
 filetype indent on
 
+" Color
+color delek
+
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
 set ruler             " Show line and column number
@@ -23,12 +26,6 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
-" Python completion
-autocmd FileType python :set omnifunc=pythoncomplete#Complete
-
-" Tab completion
-let g:SuperTabDefaultCompletionType = "context"
-
 " Search
 set hlsearch    " highlight matches
 set incsearch   " incremental searching
@@ -45,13 +42,6 @@ set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
-function TrimTrailingSpace()
-  :%s/\s\+$//e
-endfunction
-
-if exists("g:enable_mvim_shift_arrow")
-  let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
-endif
 
 " List chars
 set listchars=""                  " Reset the listchars
@@ -62,9 +52,6 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 
-" Disable autocommenting 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 " F2 paste mode
 set pastetoggle=<F2>
 set showmode
@@ -73,15 +60,33 @@ set showmode
 set nobackup
 set noswapfile
 
-"" Filetypes
+" Tab completion
+let g:SuperTabDefaultCompletionType = "context"
+
+" functions and logic
+function TrimTrailingSpace()
+  :%s/\s\+$//e
+endfunction
+
+if exists("g:enable_mvim_shift_arrow")
+  let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
+endif
+
+"" Autocommands
+" Python completion
+au FileType python :set omnifunc=pythoncomplete#Complete
+
+" Disable autocommenting 
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " SConstruct
-autocmd BufNewFile,BufRead SCons* :set ft=python
+au BufNewFile,BufRead SCons* :set ft=python
 
 " Make
 au FileType make setlocal noexpandtab " use real tabs, not tabs expanded to spaces
 
-" Python
-au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4 " follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
+" Python - follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4 "
 
 " JSON
 au BufNewFile,BufRead *.json set ft=javascript " Treat JSON files like JavaScript
@@ -90,7 +95,5 @@ au BufNewFile,BufRead *.json set ft=javascript " Treat JSON files like JavaScrip
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 
 " get rid of whitespaces in scons, python and R files
-autocmd BufWritePre *.py,*.R,SCons* :call TrimTrailingSpace()
+au BufWritePre *.py,*.R,SCons* :call TrimTrailingSpace()
 
-" Color
-color delek
