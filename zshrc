@@ -34,7 +34,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/crosenth/bin:/home/matsengrp/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=/home/crosenth/env/bin:/home/matsengrp/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
 
 # funtions
 function gist {
@@ -46,8 +46,19 @@ function cl {
   csvlook $1 | less -S
 }
 
-# aliases
-alias pytemp='gist 3006600'
+showtab () {
+  sqlite3 -csv -header $1 "pragma table_info($2)" | csvlook
+}
+
+### aliases
+# gists
+alias subcommand='gist 4486964'
+alias sconstruct='gist 4487031'
+alias p1_forward='gist 7837a716f653dcc5db0d'
+alias p357_forward='gist 5f5e4ae11670742a16f3'
+alias p3_forward='gist b7e19b43233269573334'
+alias bacteria16S_508_mod5.cm='gist b8da146181405feb9d0b'
+
 alias srun='srun -v'
 alias nseqs='grep -c ">"'
 alias scons='scons -j 4'
