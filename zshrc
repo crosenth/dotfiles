@@ -57,6 +57,7 @@ alias sconstruct='gist 4487031'
 alias p1_forward='gist 7837a716f653dcc5db0d'
 alias p357_forward='gist 5f5e4ae11670742a16f3'
 alias p3_forward='gist b7e19b43233269573334'
+alias ion_16s_primer='gist b72ff4279b114eb84660'
 alias bacteria16S_508_mod5.cm='gist b8da146181405feb9d0b'
 
 alias srun='srun -v'
