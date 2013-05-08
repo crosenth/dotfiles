@@ -34,7 +34,22 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/crosenth/env/bin:/home/matsengrp/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=/home/local/AMC/crosenth/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+
+### aliases
+# gists
+alias subcommand='gist 4486964'
+alias sconstruct='gist 4487031'
+alias p1_forward='gist 7837a716f653dcc5db0d'
+alias p357_forward='gist 5f5e4ae11670742a16f3'
+alias p3_forward='gist b7e19b43233269573334'
+alias ion_16s_primer='gist b72ff4279b114eb84660'
+alias bacteria16S_508_mod5.cm='gist b8da146181405feb9d0b'
+
+alias srun='srun -v'
+alias nseqs='grep -c ">"'
+alias s3='sqlite3 -csv -header'
+alias less='less -X'
 
 # funtions
 function gist {
@@ -50,20 +65,6 @@ showtab () {
   sqlite3 -csv -header $1 "pragma table_info($2)" | csvlook
 }
 
-### aliases
-# gists
-alias subcommand='gist 4486964'
-alias sconstruct='gist 4487031'
-alias p1_forward='gist 7837a716f653dcc5db0d'
-alias p357_forward='gist 5f5e4ae11670742a16f3'
-alias p3_forward='gist b7e19b43233269573334'
-alias ion_16s_primer='gist b72ff4279b114eb84660'
-alias bacteria16S_508_mod5.cm='gist b8da146181405feb9d0b'
-
-alias srun='srun -v'
-alias nseqs='grep -c ">"'
-alias scons='scons -j 4'
-
 # everyone in group can read and write new files
 umask 002
 
@@ -71,7 +72,7 @@ umask 002
 # # https://github.com/joelthelion/autojump
 # # https://github.com/cmccoy/oh-my-zsh
 
-ajprof=/home/matsengrp/local/etc/profile.d/autojump.zsh
+ajprof=/usr/local/etc/profile.d/autojump.zsh
   if [ -f $ajprof ]; then
   . $ajprof
   fi
