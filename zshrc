@@ -50,6 +50,8 @@ alias srun='srun -v'
 alias nseqs='grep -c ">"'
 alias s3='sqlite3 -csv -header'
 alias less='less -X'
+alias sc='seqmagick convert'
+alias si='seqmagick info'
 
 # funtions
 function gist {
@@ -83,4 +85,7 @@ function autojumpcomp () {
 }
 compdef autojumpcomp j
 
-
+# speed up tab completion
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/dotfiles/oh-my-zsh/cache
