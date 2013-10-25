@@ -63,6 +63,10 @@ function cl {
   csvlook $1 | less -S
 }
 
+function xl {
+  in2csv $1 | cl
+}
+
 showtab () {
   sqlite3 -csv -header $1 "pragma table_info($2)" | csvlook
 }
