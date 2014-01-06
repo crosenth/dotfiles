@@ -81,7 +81,7 @@ umask 002
 # # https://github.com/joelthelion/autojump
 # # https://github.com/cmccoy/oh-my-zsh
 
-ajprof=/usr/local/etc/profile.d/autojump.zsh
+ajprof=/usr/local/src/autojump/bin/autojump.zsh
   if [ -f $ajprof ]; then
   . $ajprof
   fi
