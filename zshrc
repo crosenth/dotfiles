@@ -34,10 +34,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # prompt
-PROMPT='%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # Customize to your needs...
-export PATH=/home/local/AMC/crosenth/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=/home/local/AMC/crosenth/my-env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+
+export EDITOR='vim'
 
 ### aliases
 # gists
