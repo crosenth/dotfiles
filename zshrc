@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 PROMPT='%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # Customize to your needs...
-export PATH=/home/local/AMC/crosenth/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=/home/crosenth/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
 
 ### aliases
 # gists
@@ -81,7 +81,7 @@ umask 002
 # # https://github.com/joelthelion/autojump
 # # https://github.com/cmccoy/oh-my-zsh
 
-ajprof=/usr/local/etc/profile.d/autojump.zsh
+ajprof=$HOME/.autojump/etc/profile.d/autojump.zsh
   if [ -f $ajprof ]; then
   . $ajprof
   fi
