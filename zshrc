@@ -33,6 +33,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# these oh-my-zsh options hang on UWMC filesystems
+unsetopt auto_cd
+unsetopt cdablevarS
+
 # prompt
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
@@ -94,7 +98,3 @@ function autojumpcomp () {
 }
 compdef autojumpcomp j
 
-# speed up tab completion
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/dotfiles/oh-my-zsh/cache
