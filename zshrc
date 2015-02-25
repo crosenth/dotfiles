@@ -33,11 +33,16 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# these oh-my-zsh options hang on UWMC filesystems
+unsetopt auto_cd
+unsetopt cdablevarS
+
 # prompt
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # Customize to your needs...
-export PATH=/home/crosenth/env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=/home/crosenth/my-env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export EDITOR='vim'
 
 ### aliases
 # gists
@@ -92,7 +97,3 @@ function autojumpcomp () {
 }
 compdef autojumpcomp j
 
-# speed up tab completion
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/dotfiles/oh-my-zsh/cache
