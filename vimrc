@@ -61,6 +61,10 @@ set showmode
 set nobackup
 set noswapfile
 
+" F5 Date text
+nnoremap <F5> "=strftime("%b %d, %Y")<CR>P
+inoremap <F5> <C-R>=strftime("%b %d, %Y")<CR>
+
 " Tab completion
 let g:SuperTabDefaultCompletionType = "context"
 
