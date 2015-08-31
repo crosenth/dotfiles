@@ -41,8 +41,13 @@ unsetopt cdablevarS
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # Customize to your needs...
-export PATH=/home/local/AMC/crosenth/my-env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=$HOME/my-env/bin:$HOME/my-env/edirect/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
 export EDITOR='vim'
+
+# some pip stuff
+export PYTHON_VERSION=$(python -c 'import platform; print(platform.python_version())')
+export PIP_WHEEL_DIR=/usr/local/share/python/wheels/$PYTHON_VERSION
+export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 
 ### aliases
 # gists
@@ -50,9 +55,12 @@ alias subcommand='gist 4486964'
 alias sconstruct='gist 4487031'
 alias p1_forward='gist 7837a716f653dcc5db0d'
 alias p357_forward='gist 5f5e4ae11670742a16f3'
-alias p3_forward='gist b7e19b43233269573334'
 alias ion_16s_primer='gist b72ff4279b114eb84660'
 alias bacteria16S_508_mod5.cm='gist b8da146181405feb9d0b'
+alias p341_forward='gist 014cf417eed0bf627e56'
+alias p926_forward='gist 5965150cda9208338d9c'
+alias pyscript='gist c6f374799b0e2626ee9c'
+alias contributors='gist f7c010a8ee856890d8bd'
 
 alias srun='srun -v'
 alias nseqs='grep -c ">"'
