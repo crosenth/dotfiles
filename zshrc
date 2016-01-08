@@ -41,12 +41,12 @@ unsetopt cdablevarS
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # Customize to your needs...
-export PATH=$HOME/my-env/bin:$HOME/my-env/edirect/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=$HOME/my-env/bin:$HOME/my-env/edirect:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
 export EDITOR='vim'
 
 # some pip stuff
 export PYTHON_VERSION=$(python -c 'import platform; print(platform.python_version())')
-export PIP_WHEEL_DIR=/usr/local/share/python/wheels/$PYTHON_VERSION
+export PIP_WHEEL_DIR=/molmicro/pip/wheelhouse/$PYTHON_VERSION
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 
 ### aliases
@@ -94,7 +94,7 @@ umask 002
 # # https://github.com/joelthelion/autojump
 # # https://github.com/cmccoy/oh-my-zsh
 
-ajprof=/usr/local/src/autojump/bin/autojump.zsh
+ajprof=/usr/share/autojump/autojump.zsh
   if [ -f $ajprof ]; then
   . $ajprof
   fi
