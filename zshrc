@@ -46,7 +46,7 @@ export EDITOR='vim'
 
 # some pip stuff
 export PYTHON_VERSION=$(python -c 'import platform; print(platform.python_version())')
-export PIP_WHEEL_DIR=/usr/local/share/python/wheels/$PYTHON_VERSION
+export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse/$PYTHON_VERSION
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 
 ### aliases
@@ -76,7 +76,7 @@ function gist {
 }
 
 function cl {
-  csvlook $1 | less -S
+  csvpandas look $1 | less -S
 }
 
 function xl {
