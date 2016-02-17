@@ -76,7 +76,7 @@ function gist {
 }
 
 function cl {
-  csvlook $1 | less -S
+  csvpandas look "$@" | less -S
 }
 
 function xl {
