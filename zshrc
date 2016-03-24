@@ -53,7 +53,7 @@ function gist {
 }
 
 function cl {
-  csvpandas look $@ | less -S
+  csvpandas look "$@" | less -S
 }
 
 showtab () {
@@ -107,7 +107,7 @@ umask 002
 # # https://github.com/joelthelion/autojump
 # # https://github.com/cmccoy/oh-my-zsh
 
-ajprof=$HOME/.autojump/etc/profile.d/autojump.zsh
+ajprof=/usr/share/autojump/autojump.zsh
   if [ -f $ajprof ]; then
   . $ajprof
   fi
