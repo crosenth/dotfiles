@@ -87,19 +87,6 @@ alias less='less -X'
 alias sc='seqmagick convert'
 alias si='seqmagick info'
 
-function source {
-  # wrapper to set some environment variables inside and outside a virtualenv
-  builtin source $1
-  set_pip_vars
-  VENV=$1
-
-  function deactivate {
-    builtin source $VENV
-    deactivate
-    set_pip_vars
-  }
-}
-
 # everyone in group can read and write new files
 umask 002
 
