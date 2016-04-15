@@ -40,32 +40,9 @@ unsetopt cdablevarS
 # prompt
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
-# funtions
-function set_pip_vars {
-  export PYTHON_VERSION=$(python -c 'import platform; print(platform.python_version())')
-  export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse/$PYTHON_VERSION
-  export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
-}
-
-function gist {
-  # print contents of the first file in the gist to stdout
-  curl -s https://api.github.com/gists/$1 | python -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
-}
-
-function cl {
-  csvpandas look "$@" | less -S -X
-}
-
-showtab () {
-  sqlite3 -csv -header $1 "pragma table_info($2)" | csvlook
-}
-
 # Customize to your needs...
 export PATH=$HOME/my-env/bin:$HOME/my-env/edirect/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
 export EDITOR='vim'
-
-# some PIP_ vars
-set_pip_vars
 
 ### aliases
 # gists
@@ -86,6 +63,29 @@ alias s3='sqlite3 -csv -header'
 alias less='less -X'
 alias sc='seqmagick convert'
 alias si='seqmagick info'
+
+# funtions
+function set_pip_vars {
+  export PYTHON_VERSION=$(python -c 'import platform; print(platform.python_version())')
+  export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse/$PYTHON_VERSION
+  export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
+}
+
+function gist {
+  # print contents of the first file in the gist to stdout
+  curl -s https://api.github.com/gists/$1 | python -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
+}
+
+function cl {
+  csvpandas look "$@" | less -S
+}
+
+showtab () {
+  sqlite3 -csv -header $1 "pragma table_info($2)" | csvlook
+}
+
+# some PIP_ vars
+set_pip_vars
 
 # everyone in group can read and write new files
 umask 002
