@@ -53,7 +53,7 @@ function gist {
 }
 
 function cl {
-  csvpandas look "$@" | less -S
+  csvpandas look "$@" | less -S -X
 }
 
 showtab () {
