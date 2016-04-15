@@ -66,8 +66,7 @@ alias si='seqmagick info'
 
 # funtions
 function set_pip_vars {
-  export PYTHON_VERSION=$(python -c 'import platform; print(platform.python_version())')
-  export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse/$PYTHON_VERSION
+  export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
   export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 }
 
