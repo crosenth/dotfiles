@@ -14,6 +14,7 @@ set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
 set ruler             " Show line and column number
 set encoding=utf-8    " Set default encoding to UTF-8
+set splitright        " open verticle split screen to the right
 
 " History and undolevels
 set history=1000         " remember more commands and search history
