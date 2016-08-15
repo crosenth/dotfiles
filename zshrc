@@ -81,7 +81,7 @@ showtab () {
 }
 
 # everyone in group can read and write new files
-umask 002
+umask o-rwx
 
 # configure autojump
 # # https://github.com/joelthelion/autojump
