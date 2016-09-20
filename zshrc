@@ -64,6 +64,7 @@ alias csvcut='snippet 9zuMm2P_Ufxb_kkDP7xX 51 4'
 alias csvgrep='snippet 9zuMm2P_Ufxb_kkDP7xX 51 2'
 alias csvsort='snippet 9zuMm2P_Ufxb_kkDP7xX 51 5'
 alias in2csv='snippet 9zuMm2P_Ufxb_kkDP7xX 51 7'
+alias snippet='snippet 9zuMm2P_Ufxb_kkDP7xX 54 8'
 
 alias srun='srun -v'
 alias nseqs='grep -c ">"'
