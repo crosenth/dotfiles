@@ -59,6 +59,13 @@ alias p926_forward='gist 5965150cda9208338d9c'
 alias pyscript='gist c6f374799b0e2626ee9c'
 alias contributors='gist f7c010a8ee856890d8bd'
 
+# snippets
+alias csvcut='snippet 9zuMm2P_Ufxb_kkDP7xX 51 4'
+alias csvgrep='snippet 9zuMm2P_Ufxb_kkDP7xX 51 2'
+alias csvsort='snippet 9zuMm2P_Ufxb_kkDP7xX 51 5'
+alias in2csv='snippet 9zuMm2P_Ufxb_kkDP7xX 51 7'
+alias snippet='snippet 9zuMm2P_Ufxb_kkDP7xX 54 8'
+
 alias srun='srun -v'
 alias nseqs='grep -c ">"'
 alias s3='sqlite3 -csv -header'
@@ -72,6 +79,11 @@ function gist {
   curl -s https://api.github.com/gists/$1 | python -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
 }
 
+function snippet {
+  curl --silent --insecure --header "PRIVATE-TOKEN: $1" \
+    https://gitlab.labmed.uw.edu/api/v3/projects/$2/snippets/$3/raw | tr --delete '\r'
+}
+
 function cl {
   csvpandas look "$@" | less -S
 }
@@ -80,12 +92,12 @@ showtab () {
   sqlite3 -csv -header $1 "pragma table_info($2)" | csvlook
 }
 
-# everyone in group can read and write new files
+# everyone in group plus user can read and write new files
 umask ug+rwx,o-rwx
 
 # configure autojump
-# # https://github.com/joelthelion/autojump
-# # https://github.com/cmccoy/oh-my-zsh
+# https://github.com/joelthelion/autojump
+# https://github.com/cmccoy/oh-my-zsh
 
 ajprof=/usr/share/autojump/autojump.zsh
   if [ -f $ajprof ]; then
@@ -97,4 +109,3 @@ function autojumpcomp () {
   autojump --completion ${=cur[*]} | while read i; do compadd -U "$i"; done
 }
 compdef autojumpcomp j
-
