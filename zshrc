@@ -41,7 +41,8 @@ unsetopt cdablevarS
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # Customize to your needs...
-export PATH=$HOME/my-env/bin:$HOME/my-env/edirect:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export GOROOT=$HOME/my-env/go
+export PATH=$HOME/my-env/bin:$HOME/my-env/edirect:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin:$GOROOT/go
 export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
@@ -59,13 +60,6 @@ alias p926_forward='gist 5965150cda9208338d9c'
 alias pyscript='gist c6f374799b0e2626ee9c'
 alias contributors='gist f7c010a8ee856890d8bd'
 
-# snippets
-alias csvcut='snippet 9zuMm2P_Ufxb_kkDP7xX 51 4'
-alias csvgrep='snippet 9zuMm2P_Ufxb_kkDP7xX 51 2'
-alias csvsort='snippet 9zuMm2P_Ufxb_kkDP7xX 51 5'
-alias in2csv='snippet 9zuMm2P_Ufxb_kkDP7xX 51 7'
-alias snippet='snippet 9zuMm2P_Ufxb_kkDP7xX 54 8'
-
 alias srun='srun -v'
 alias nseqs='grep -c ">"'
 alias s3='sqlite3 -csv -header'
@@ -76,7 +70,7 @@ alias si='seqmagick info'
 # funtions
 function gist {
   # print contents of the first file in the gist to stdout
-  curl -s https://api.github.com/gists/$1 | python -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
+  curl -s https://api.github.com/gists/$1 | python2 -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
 }
 
 function snippet {
