@@ -66,11 +66,11 @@ set noswapfile
 nnoremap <F5> "=strftime("%b %d, %Y")<CR>P
 inoremap <F5> <C-R>=strftime("%b %d, %Y")<CR>
 
-" Perfered python syntax checker
-let g:syntastic_python_checkers = ['flake8']
-
 " Tab completion
 let g:SuperTabDefaultCompletionType = "context"
+
+" Syntastic
+let g:syntastic_python_checkers = ['flake8']
 
 " functions and logic
 function TrimTrailingSpace()
