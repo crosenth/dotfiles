@@ -60,10 +60,10 @@ alias pyscript='gist c6f374799b0e2626ee9c'
 alias contributors='gist f7c010a8ee856890d8bd'
 
 # snippets
-alias csvcut='snippet 9zuMm2P_Ufxb_kkDP7xX 51 4'
-alias csvgrep='snippet 9zuMm2P_Ufxb_kkDP7xX 51 2'
-alias csvsort='snippet 9zuMm2P_Ufxb_kkDP7xX 51 5'
-alias in2csv='snippet 9zuMm2P_Ufxb_kkDP7xX 51 7'
+#alias csvcut='snippet 9zuMm2P_Ufxb_kkDP7xX 51 4'
+#alias csvgrep='snippet 9zuMm2P_Ufxb_kkDP7xX 51 2'
+#alias csvsort='snippet 9zuMm2P_Ufxb_kkDP7xX 51 5'
+#alias in2csv='snippet 9zuMm2P_Ufxb_kkDP7xX 51 7'
 alias snippet='snippet 9zuMm2P_Ufxb_kkDP7xX 54 8'
 
 alias srun='srun -v'
@@ -109,3 +109,8 @@ function autojumpcomp () {
   autojump --completion ${=cur[*]} | while read i; do compadd -U "$i"; done
 }
 compdef autojumpcomp j
+
+# if on the Hutch machines
+if [[ -f /etc/profile.d/fh_path.sh ]]; then
+  source /etc/profile.d/fh_path.sh > /dev/null
+fi
