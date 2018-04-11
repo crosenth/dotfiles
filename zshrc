@@ -98,18 +98,9 @@ umask ug+rwx,o-rwx
 
 # configure autojump
 # https://github.com/joelthelion/autojump
-# https://github.com/cmccoy/oh-my-zsh
 
-ajprof=/usr/share/autojump/autojump.zsh
-  if [ -f $ajprof ]; then
-  . $ajprof
-  fi
-
-function autojumpcomp () {
-  cur=${words[2, -1]}
-  autojump --completion ${=cur[*]} | while read i; do compadd -U "$i"; done
-}
-compdef autojumpcomp j
+[[ -s /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh ]] && source /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 # if on the Hutch machines
 if [[ -f /etc/profile.d/fh_path.sh ]]; then
