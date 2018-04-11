@@ -99,7 +99,7 @@ umask ug+rwx,o-rwx
 # configure autojump
 # https://github.com/joelthelion/autojump
 
-[[ -s /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh ]] && source /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 # if on the Hutch machines
