@@ -70,7 +70,7 @@ inoremap <F5> <C-R>=strftime("%b %d, %Y")<CR>
 let g:SuperTabDefaultCompletionType = "context"
 
 " Syntastic
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8', 'pep8']
 
 " functions and logic
 function TrimTrailingSpace()
