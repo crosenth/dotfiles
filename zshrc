@@ -75,6 +75,10 @@ alias sc='seqmagick convert'
 alias si='seqmagick info'
 
 # funtions
+function f {
+  python -c "import pandas; pandas.set_option('display.max_columns', 500); print(pandas.read_feather(\"$1\"))"
+}
+
 function gist {
   # print contents of the first file in the gist to stdout
   curl -s https://api.github.com/gists/$1 | python2 -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
@@ -99,7 +103,7 @@ umask ug+rwx,o-rwx
 # configure autojump
 # https://github.com/joelthelion/autojump
 
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+[[ -s /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh ]] && source /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 # if on the Hutch machines
