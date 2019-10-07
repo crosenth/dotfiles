@@ -42,7 +42,7 @@ PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$f
 
 # Customize to your needs...
 export GOROOT=$HOME/my-env/go
-export PATH=$HOME/my-env/bin:$HOME/my-env/bin/x86_64-linux:$HOME/my-env/edirect:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin:$GOROOT/go
+export PATH=$HOME/my-env/bin:$HOME/my-env/bin/x86_64-linux:$HOME/my-env/edirect:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin:$GOROOT/go:/Library/TeX/texbin
 export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
