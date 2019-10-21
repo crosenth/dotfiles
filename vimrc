@@ -104,5 +104,7 @@ au BufNewFile,BufRead *.json set ft=javascript " Treat JSON files like JavaScrip
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 
 " get rid of whitespaces in scons, python and R files
-au BufWritePre *.py,*.R,SCons* :call TrimTrailingSpace()
+au BufWritePre *.py,*.R,SCons*,*.groovy,*.nf :call TrimTrailingSpace()
 
+" Groovy and Nextflow files
+au BufNewFile,BufRead *.groovy,*.nf  setf groovy
