@@ -85,7 +85,7 @@ function f {
 
 function gist {
   # print contents of the first file in the gist to stdout
-  curl -s https://api.github.com/gists/$1 | python3 -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
+  curl -s https://api.github.com/gists/$1 | python3 -c 'import json, sys; print(list(json.load(sys.stdin)["files"].items())[0][1]["content"])'
 }
 
 function snippet {
