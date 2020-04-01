@@ -43,14 +43,15 @@ PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$f
 # if on the Hutch machines
 if [[ -f /etc/profile.d/fh_path.sh ]]; then
   source /etc/profile.d/fh_path.sh > /dev/null
+  ml tmux/2.3-foss-2016b
 fi
 
-export PATH=$HOME/my-env/bin:/app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
 export EDITOR='vim'
-export PATH=$HOME/my-env/bin:$HOME/my-env/edirect:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/app/bin
+export PATH=$HOME/my-env/bin:$HOME/my-env/edirect:$PATH
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
+export AWS_DEFAULT_PROFILE=saml
 
 ### aliases
 # gists
@@ -85,7 +86,7 @@ function f {
 
 function gist {
   # print contents of the first file in the gist to stdout
-  curl -s https://api.github.com/gists/$1 | python2 -c 'import json, sys; print json.load(sys.stdin)["files"].items()[0][1]["content"]'
+  curl -s https://api.github.com/gists/$1 | python3 -c 'import json, sys; print(list(json.load(sys.stdin)["files"].items())[0][1]["content"])'
 }
 
 function snippet {
@@ -106,8 +107,7 @@ umask ug+rwx,o-rwx
 
 # configure autojump
 # https://github.com/joelthelion/autojump
-[[ -s /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh ]] && source /home/local/AMC/crosenth/.autojump/etc/profile.d/autojump.sh
-[[ -s /home/crosenth/.autojump/etc/profile.d/autojump.sh ]] && source /home/crosenth/.autojump/etc/profile.d/autojump.sh
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 
