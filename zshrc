@@ -41,13 +41,15 @@ unsetopt cdablevarS
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 # if on the Hutch machines
-if [[ -f /etc/profile.d/fh_path.sh ]]; then
-  source /etc/profile.d/fh_path.sh > /dev/null
-  ml tmux/2.3-foss-2016b
+if [[ -f /etc/profile.d/modules.sh ]]; then
+  # use `module avail` for available modules
+  source /etc/profile.d/modules.sh
+  module load Python/3.8.2-GCCcore-9.3.0
+  module load tmux/3.0-GCCcore-8.3.0
 fi
 
 export EDITOR='vim'
-export PATH=$HOME/my-env/bin:$HOME/my-env/edirect:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
@@ -109,5 +111,3 @@ umask ug+rwx,o-rwx
 # https://github.com/joelthelion/autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
-
-
