@@ -49,7 +49,6 @@ if [[ -f /etc/profile.d/modules.sh ]]; then
 fi
 
 export EDITOR='vim'
-export PATH=$HOME/.local/bin:$PATH
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
