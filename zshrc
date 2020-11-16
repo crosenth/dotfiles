@@ -33,10 +33,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# these oh-my-zsh options hang on UWMC filesystems
-unsetopt auto_cd
-unsetopt cdablevarS
-
 # prompt
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
@@ -51,7 +47,7 @@ export PATH=$HOME/my-env/bin:$HOME/my-env/edirect:$PATH
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
-export AWS_DEFAULT_PROFILE=saml
+export AWS_DEFAULT_PROFILE=saml_dev
 
 ### aliases
 # gists
