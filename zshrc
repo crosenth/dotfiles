@@ -44,6 +44,7 @@ if [[ -f /etc/profile.d/modules.sh ]]; then
   module load tmux/3.0-GCCcore-8.3.0
 fi
 
+export PATH=$HOME/.local/bin:$PATH
 export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
@@ -88,7 +89,7 @@ function gist {
 
 function snippet {
   curl --silent --insecure --header "PRIVATE-TOKEN: $1" \
-    https://gitlab.labmed.uw.edu/api/v3/projects/$2/snippets/$3/raw | tr --delete '\r'
+  https://gitlab.labmed.uw.edu/api/v3/projects/$2/snippets/$3/raw | tr --delete '\r'
 }
 
 function cl {
