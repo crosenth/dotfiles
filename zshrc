@@ -48,7 +48,7 @@ export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
-export AWS_DEFAULT_PROFILE=saml_dev
+export AWS_DEFAULT_PROFILE=saml
 
 ### aliases
 # gists
