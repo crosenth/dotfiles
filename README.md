@@ -9,7 +9,7 @@
 
 ```
 cd $HOME
-python3 -venv --copies .local
+python3 -m venv --copies .local
 pip3 install flake8 pep8
 git clone --recursive https://github.com/crosenth/dotfiles.git
 ln -s dotfiles/zshrc .zshrc
