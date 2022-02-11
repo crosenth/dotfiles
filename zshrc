@@ -49,6 +49,10 @@ export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
+export NGS16S=/mnt/disk2/molmicro/common/ncbi/16s
+
+# rootless Docker
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 ### aliases
 # gists
