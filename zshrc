@@ -52,7 +52,7 @@ export TMPDIR=$HOME/tmp
 export NGS16S=/mnt/disk2/molmicro/common/ncbi/16s
 
 # rootless Docker
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+# export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 ### aliases
 # gists
