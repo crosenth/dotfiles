@@ -44,36 +44,26 @@ if [[ -f /etc/profile.d/modules.sh ]]; then
   module load tmux/3.0-GCCcore-8.3.0
 fi
 
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/share/jdk-18.0.2/bin:$PATH
 export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
 export NGS16S=/mnt/disk2/molmicro/common/ncbi/16s
+export SCONS_ENABLE_VIRTUALENV=1
 
 # rootless Docker
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+# export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 ### aliases
 # gists
-alias subcommand='gist 4486964'
-alias sconstruct='gist 4487031'
 alias p1_forward='gist 7837a716f653dcc5db0d'
 alias p357_forward='gist 5f5e4ae11670742a16f3'
-alias ion_16s_primer='gist b72ff4279b114eb84660'
-alias bacteria16S_508_mod5.cm='gist b8da146181405feb9d0b'
 alias p341_forward='gist 014cf417eed0bf627e56'
 alias p926_forward='gist 5965150cda9208338d9c'
 alias pyscript='gist c6f374799b0e2626ee9c'
-alias contributors='gist f7c010a8ee856890d8bd'
 
 # snippets
-#alias csvcut='snippet 9zuMm2P_Ufxb_kkDP7xX 51 4'
-#alias csvgrep='snippet 9zuMm2P_Ufxb_kkDP7xX 51 2'
-#alias csvsort='snippet 9zuMm2P_Ufxb_kkDP7xX 51 5'
-#alias in2csv='snippet 9zuMm2P_Ufxb_kkDP7xX 51 7'
-alias snippet='snippet 9zuMm2P_Ufxb_kkDP7xX 54 8'
-alias srun='srun -v'
 alias nseqs='grep -c ">"'
 alias s3='sqlite3 -csv -header'
 alias less='less -X'
@@ -95,12 +85,8 @@ function snippet {
   https://gitlab.labmed.uw.edu/api/v3/projects/$2/snippets/$3/raw | tr --delete '\r'
 }
 
-function cl {
-  csvpandas look "$@" | less -S
-}
-
-showtab () {
-  sqlite3 -csv -header $1 "pragma table_info($2)" | csvlook
+function xt {
+  xsv table "$@" | less -S
 }
 
 # everyone in group plus user can read and write new files
