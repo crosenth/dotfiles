@@ -1,5 +1,6 @@
-" Pathogen
-call pathogen#infect()
+let g:ale_completion_enabled = 1
+
+packloadall
 
 " Basic Setup
 syntax on
@@ -7,7 +8,7 @@ filetype plugin on
 filetype indent on
 
 " Color
-color delek
+colorscheme delek
 
 " Window
 set nocompatible      " Use vim, no vi defaults
@@ -66,12 +67,6 @@ set noswapfile
 nnoremap <F5> "=strftime("%b %d, %Y")<CR>P
 inoremap <F5> <C-R>=strftime("%b %d, %Y")<CR>
 
-" Tab completion
-let g:SuperTabDefaultCompletionType = "context"
-
-" Syntastic
-let g:syntastic_python_checkers = ['flake8', 'pep8']
-
 " functions and logic
 function TrimTrailingSpace()
   :%s/\s\+$//e
@@ -82,8 +77,8 @@ if exists("g:enable_mvim_shift_arrow")
 endif
 
 "" Autocommands
-" Python completion
-au FileType python :set omnifunc=pythoncomplete#Complete
+" Python completion <C-x><C-o>
+set omnifunc=ale#completion#OmniFunc
 
 " Disable autocommenting 
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
