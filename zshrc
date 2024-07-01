@@ -40,20 +40,11 @@ unsetopt cdablevarS
 # prompt
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
-# if on the Hutch machines
-if [[ -f /etc/profile.d/modules.sh ]]; then
-  # use `module avail` for available modules
-  source /etc/profile.d/modules.sh
-  module load Python/3.8.2-GCCcore-9.3.0
-  module load tmux/3.0-GCCcore-8.3.0
-fi
-
 export EDITOR='vim'
 export PATH=$HOME/.local/bin:$PATH
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
 export TMPDIR=$HOME/tmp
-export AWS_DEFAULT_PROFILE=saml
 
 ### aliases
 # gists
