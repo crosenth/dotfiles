@@ -36,14 +36,6 @@ source $ZSH/oh-my-zsh.sh
 # prompt
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
-# if on the Hutch machines
-if [[ -f /etc/profile.d/modules.sh ]]; then
-  # use `module avail` for available modules
-  source /etc/profile.d/modules.sh
-  module load Python/3.8.2-GCCcore-9.3.0
-  module load tmux/3.0-GCCcore-8.3.0
-fi
-
 export PATH=$HOME/.local/bin:$HOME/.local/share/jdk-18.0.2/bin:$PATH
 export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
