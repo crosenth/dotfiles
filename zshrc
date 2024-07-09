@@ -52,9 +52,6 @@ export TMPDIR=$HOME/tmp
 export NGS16S=/mnt/disk2/molmicro/common/ncbi/16s
 export SCONS_ENABLE_VIRTUALENV=1
 
-# rootless Docker
-# export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
-
 ### aliases
 # gists
 alias p1_forward='gist 7837a716f653dcc5db0d'
