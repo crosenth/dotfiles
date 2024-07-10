@@ -1,5 +1,6 @@
 # shell
 ZSH=$HOME/dotfiles/oh-my-zsh
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/ohmyzsh"
 ZSH_THEME="robbyrussell"
 plugins=(autojump git)
 source $ZSH/oh-my-zsh.sh
