@@ -1,0 +1,5 @@
+flake8
+ipython
+jupyterlab
+langchain-openai
+pandas
