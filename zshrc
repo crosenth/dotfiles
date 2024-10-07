@@ -85,3 +85,5 @@ umask ug+rwx,o-rwx
 # https://github.com/joelthelion/autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
+
+mkdir -p $TMPDIR
