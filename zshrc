@@ -47,16 +47,14 @@ function snippet {
 # everyone in group plus user can read and write new files
 umask ug+rwx,o-rwx
 
-<<<<<<< HEAD
 # configure autojump
 # https://github.com/joelthelion/autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 mkdir -p $TMPDIR
-=======
+
 # load .env file
 if test -f $HOME/.env; then
   set -a && source $HOME/.env && set +a
 fi
->>>>>>> b1757ff52140084a7aa00f15d6abdfe8ba8239ac
