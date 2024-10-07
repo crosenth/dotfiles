@@ -44,10 +44,6 @@ function snippet {
   https://gitlab.labmed.uw.edu/api/v3/projects/$2/snippets/$3/raw | tr --delete '\r'
 }
 
-function xt {
-  xsv table "$@" | less -S
-}
-
 # everyone in group plus user can read and write new files
 umask ug+rwx,o-rwx
 
