@@ -3,7 +3,6 @@
 ## Requirements
 
 * Python 3.x
-* Python 3 [venv](https://docs.python.org/3/library/venv.html) module
 
 ## Install
 
