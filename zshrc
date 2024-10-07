@@ -1,48 +1,18 @@
-# Path to your oh-my-zsh configuration.
+# shell
 ZSH=$HOME/dotfiles/oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/ohmyzsh"
 ZSH_THEME="robbyrussell"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
+plugins=(autojump git)
 source $ZSH/oh-my-zsh.sh
-
-# prompt
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 export PATH=$HOME/.local/bin:$HOME/.local/share/jdk-18.0.2/bin:$PATH
+
 export EDITOR='vim'
-export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
+export PIP_WHEEL_DIR=$HOME/.local/pip/wheelhouse
 export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
-export TMPDIR=$HOME/tmp
-export NGS16S=/mnt/disk2/molmicro/common/ncbi/16s
 export SCONS_ENABLE_VIRTUALENV=1
+export TMPDIR=$HOME/tmp
 
 ### aliases
 # gists
@@ -81,9 +51,16 @@ function xt {
 # everyone in group plus user can read and write new files
 umask ug+rwx,o-rwx
 
+<<<<<<< HEAD
 # configure autojump
 # https://github.com/joelthelion/autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 mkdir -p $TMPDIR
+=======
+# load .env file
+if test -f $HOME/.env; then
+  set -a && source $HOME/.env && set +a
+fi
+>>>>>>> b1757ff52140084a7aa00f15d6abdfe8ba8239ac
