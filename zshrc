@@ -48,6 +48,7 @@ function snippet {
 umask ug+rwx,o-rwx
 
 mkdir -p $TMPDIR
+mkdir -p $HOME/trash
 
 # configure autojump
 # https://github.com/joelthelion/autojump
