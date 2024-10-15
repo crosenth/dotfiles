@@ -6,7 +6,7 @@ plugins=(autojump git)
 source $ZSH/oh-my-zsh.sh
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
-export PATH=$HOME/.local/bin:$HOME/.local/share/jdk-18.0.2/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 export EDITOR='vim'
 export PIP_WHEEL_DIR=$HOME/.local/pip/wheelhouse
