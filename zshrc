@@ -50,11 +50,6 @@ umask ug+rwx,o-rwx
 mkdir -p $TMPDIR
 mkdir -p $HOME/trash
 
-# configure autojump
-# https://github.com/joelthelion/autojump
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
-
 # load .env file
 if test -f $HOME/.env; then
   set -a && source $HOME/.env && set +a
