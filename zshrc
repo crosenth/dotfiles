@@ -1,3 +1,15 @@
+export EDITOR='vim'
+export PATH=$HOME/.local/bin:$PATH
+export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
+export PIP_WHEEL_DIR=$HOME/.local/pip/wheelhouse
+export SCONS_ENABLE_VIRTUALENV=1
+export TMPDIR=$HOME/tmp
+export XDG_CACHE_HOME=$HOME/.cache
+
+mkdir -p $HOME/trash
+mkdir -p $TMPDIR
+mkdir -p $XDG_CACHE_HOME
+
 # shell
 ZSH=$HOME/dotfiles/oh-my-zsh
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/ohmyzsh"
@@ -5,14 +17,6 @@ ZSH_THEME="robbyrussell"
 plugins=(autojump git)
 source $ZSH/oh-my-zsh.sh
 PROMPT='%{$fg[cyan]%}%m:%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
-export PATH=$HOME/.local/bin:$PATH
-
-export EDITOR='vim'
-export PIP_WHEEL_DIR=$HOME/.local/pip/wheelhouse
-export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
-export SCONS_ENABLE_VIRTUALENV=1
-export TMPDIR=$HOME/tmp
 
 ### aliases
 # gists
@@ -46,9 +50,6 @@ function snippet {
 
 # everyone in group plus user can read and write new files
 umask ug+rwx,o-rwx
-
-mkdir -p $TMPDIR
-mkdir -p $HOME/trash
 
 # load .env file
 if test -f $HOME/.env; then
