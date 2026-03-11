@@ -1,6 +1,6 @@
 export EDITOR='vim'
 export PATH=$HOME/.local/bin:$PATH
-export PIP_FIND_LINKS=file://$PIP_WHEEL_DIR
+export PIP_FIND_LINKS=$PIP_WHEEL_DIR
 export PIP_WHEEL_DIR=$HOME/.local/pip/wheelhouse
 export SCONS_ENABLE_VIRTUALENV=1
 export TMPDIR=$HOME/tmp
