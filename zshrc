@@ -1,3 +1,4 @@
+export COLORTERM=truecolor
 export EDITOR='vim'
 export PATH=$HOME/.local/bin:$PATH
 export PIP_FIND_LINKS=$PIP_WHEEL_DIR
@@ -11,6 +12,7 @@ mkdir -p $TMPDIR
 mkdir -p $XDG_CACHE_HOME
 
 # shell
+zstyle ':omz:update' mode auto
 ZSH=$HOME/dotfiles/oh-my-zsh
 ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/ohmyzsh"
 ZSH_THEME="robbyrussell"
