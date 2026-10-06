@@ -10,4 +10,10 @@ export PIP_FIND_LINKS=$PIP_WHEEL_DIR
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 export NVM_DIR="$HOME/.nvm"
 
-path=($HOME/.local/bin $HOME/.local/share/jdk-18.0.2/bin $path)
+path=($HOME/.local/bin $path)
+
+# rust toolchain, if installed on this machine
+[[ -f $HOME/.cargo/env ]] && . "$HOME/.cargo/env"
+
+# machine-specific overrides, not in version control
+[[ -f ${ZDOTDIR:-$HOME}/.zshenv.local ]] && . ${ZDOTDIR:-$HOME}/.zshenv.local

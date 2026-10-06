@@ -4,3 +4,6 @@ mkdir -p $HOME/trash $TMPDIR $XDG_CACHE_HOME
 if [[ -f $HOME/.env ]]; then
   set -a && source $HOME/.env && set +a
 fi
+
+# machine-specific overrides, not in version control
+[[ -f ${ZDOTDIR:-$HOME}/.zprofile.local ]] && . ${ZDOTDIR:-$HOME}/.zprofile.local
