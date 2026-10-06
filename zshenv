@@ -12,8 +12,5 @@ export NVM_DIR="$HOME/.nvm"
 
 path=($HOME/.local/bin $path)
 
-# rust toolchain, if installed on this machine
-[[ -f $HOME/.cargo/env ]] && . "$HOME/.cargo/env"
-
 # machine-specific overrides, not in version control
 [[ -f ${ZDOTDIR:-$HOME}/.zshenv.local ]] && . ${ZDOTDIR:-$HOME}/.zshenv.local
